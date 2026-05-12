@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+<a class="back" href="/">← 메인으로</a>
+
+<section class="game-wrap">
+  <div class="game-box">
+    <h1>Almost Done</h1>
+    <p class="desc">조금만 기다리면 완료됩니다. 아마도요.</p>
+
+    <div class="progress-outer">
+      <div class="progress-inner" id="bar"></div>
+    </div>
+
+    <div class="message" id="percent">0%</div>
+    <div class="message" id="status">준비 중...</div>
+  </div>
+</section>
+{% endblock %}

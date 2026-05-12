@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+<a class="back" href="/">← 메인으로</a>
+
+<section class="game-wrap">
+  <div class="game-box">
+    <h1>Chaos Note</h1>
+    <p class="desc">메모를 작성하고 저장해보세요. 엔터키와 저장 버튼을 너무 믿지는 마세요.</p>
+
+    <textarea id="note" placeholder="중요한 내용을 적어보세요..."></textarea>
+
+    <br><br>
+
+    <button class="btn" id="save">저장</button>
+    <button class="btn secondary" id="clear">초기화</button>
+
+    <div class="message" id="result"></div>
+  </div>
+</section>
+{% endblock %}

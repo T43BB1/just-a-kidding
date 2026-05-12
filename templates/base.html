@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{{ title | default('JUST A KIDDING') }} | JUST A KIDDING</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+</head>
+<body>
+  <div class="noise"></div>
+
+  <div class="container">
+    <div class="topbar">
+      <a class="logo" href="/">☀️ JUST A KIDDING</a>
+      <div class="badge">농담입니다 :3</div>
+    </div>
+
+    {% block content %}{% endblock %}
+  </div>
+
+  <div id="toast" class="toast"></div>
+
+  <script src="{{ url_for('static', filename='js/common.js') }}"></script>
+  {% if script_file %}
+    <script src="{{ url_for('static', filename='js/' ~ script_file) }}"></script>
+  {% endif %}
+  <script>
+    function spawnNerd() {
+      const el = document.createElement("div");
+      el.className = "rolling-emoji";
+      el.textContent = "🤓";
+      el.style.top = Math.random() * 80 + 10 + "vh";
+      el.style.animationDuration = 4 + Math.random() * 6 + "s";
+      document.body.appendChild(el);
+      el.addEventListener("animationend", () => el.remove());
+    }
+    setInterval(spawnNerd, 3000 + Math.random() * 2000);
+    spawnNerd();
+  </script>
+</body>
+</html>
