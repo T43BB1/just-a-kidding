@@ -1,6 +1,7 @@
+import os
 from flask import Flask, render_template
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder="static", template_folder="templates")
 
 GAMES = [
     {"number": "01", "title": "Catch Me", "description": "버튼을 눌러보세요. 그냥 누르면 됩니다.", "url": "/catch-me"},
